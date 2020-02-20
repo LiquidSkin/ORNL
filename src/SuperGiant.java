@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class SuperGiant extends Star {
 	private float surfaceGravity;
 
@@ -11,13 +11,26 @@ public class SuperGiant extends Star {
 	}
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		SuperGiant sg1 = new SuperGiant();
-		sg1.setName("Betelgeuse");
-		sg1.setConstellation("Ursula Major");
-		sg1.setLuminosity(100);
-		sg1.setRadius(4000000);
-		sg1.setTemperature(10000);
-		sg1.setSurfaceGravity(4);
+		System.out.println("Enter the star name");
+		String name = sc.nextLine();
+		sg1.setName(name);
+		System.out.println("Enter the constellation name");
+		String constellation = sc.nextLine();
+		sg1.setConstellation(constellation);
+		System.out.println("Enter the lumosity of the star");
+		int l = sc.nextInt();
+		sg1.setLuminosity(l);
+		System.out.println("Enter the radius of the star");
+		int radius = sc.nextInt();
+		sg1.setRadius(radius);
+		System.out.println("Enter the temperature of the star");
+		long temp = sc.nextLong();
+		sg1.setTemperature(temp);
+		System.out.println("Enter the surface gravity of the star");
+		float sg = sc.nextFloat();
+		sg1.setSurfaceGravity(sg);
 		System.out.println(sg1.getSurfaceGravity());
 		System.out.println(sg1.calculateFlux());
 	}

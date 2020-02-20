@@ -1,6 +1,6 @@
 
 public abstract class DwarfStar extends Star {
-	private double pressure;
+	private int pressure;
 	private double fusionRate;
 
 	public double getFusionRate() {
@@ -11,15 +11,15 @@ public abstract class DwarfStar extends Star {
 		this.fusionRate = fusionRate;
 	}
 
-	public double getPressure() {
+	public int getPressure() {
 		return pressure;
 	}
 
-	public void setPressure(double pressure) {
+	public void setPressure(int pressure) {
 		this.pressure = pressure;
 	}
 
-	public abstract double calculatePressure();
+	public abstract int calculatePressure();
 
 	public abstract void getDetails();
 

@@ -4,8 +4,8 @@ import java.util.*;
 public class BlackDwarf extends DwarfStar {
 
 	@Override
-	public double calculatePressure() {
-		return(getRadius() * getRadius());
+	public int calculatePressure() {
+		return (int) (getRadius() * getRadius());
 	}
 
 	@Override
@@ -22,10 +22,10 @@ public class BlackDwarf extends DwarfStar {
 		String constellation = sc.nextLine();
 		bd.setConstellation(constellation);
 		System.out.println("Enter the radius");
-		double r = sc.nextDouble();
+		int r = sc.nextInt();
 		bd.setRadius(r);
 		System.out.println("Enter the pressure");
-		double pressure = sc.nextDouble();
+		int pressure = sc.nextInt();
 		bd.setPressure(pressure);
 		System.out.println("Enter the fusionrate");
 		double fusionRate = sc.nextDouble();

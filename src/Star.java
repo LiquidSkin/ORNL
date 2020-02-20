@@ -1,14 +1,20 @@
 import java.io.*;
 import java.math.*;
+import java.util.*;
 
+/*
+This is a Star class with the following properties represented as instance variables. All the properties are private for the purpose of demonstrating
+Data Encapsulation in Java. We can access these variables by using the getter and setter methods provided within the class.C
+*/
 public class Star {
 	private String name;
 	private String constellation;
 	private int luminosity;
 	private long temperature;
 	private double flux;
-	private double radius;
+	private int radius;
 
+	// get and set the name of the star
 	public String getName() {
 		return name;
 	}
@@ -21,14 +27,16 @@ public class Star {
 		this.name = name;
 	}
 
-	public double getRadius() {
+	// get and set the radius of the star
+	public int getRadius() {
 		return radius;
 	}
 
-	public void setRadius(double radius) {
+	public void setRadius(int radius) {
 		this.radius = radius;
 	}
 
+	// get and set the name of the constellation where the star is
 	public String getConstellation() {
 		return constellation;
 	}
@@ -40,6 +48,7 @@ public class Star {
 		this.constellation = constellation;
 	}
 
+	// get and set the lumosity of the star
 	public int getLuminosity() {
 		return luminosity;
 	}
@@ -48,6 +57,7 @@ public class Star {
 		this.luminosity = luminosity;
 	}
 
+	// get and set the temperature of the star
 	public long getTemperature() {
 		return temperature;
 	}
@@ -56,19 +66,32 @@ public class Star {
 		this.temperature = temperature;
 	}
 
+	// this is a method to calculate the flux of the star by using its radius and
+	// lumosity
 	public double calculateFlux() {
 		flux = luminosity / (4 * radius * radius * Math.PI * Math.PI);
 		return flux;
 
 	}
-
+    // driver function to set the properties of the star class
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		Star s1 = new Star();
-		s1.setConstellation("Hydra");
-		s1.setName("Sun");
-		s1.setLuminosity(22);
-		s1.setTemperature(2000);
-		s1.setRadius(50000);
+		System.out.println("Enter the constellation name");
+		String constellation = sc.nextLine();
+		s1.setConstellation(constellation);
+		System.out.println("Enter the star name");
+		String name = sc.nextLine();
+		s1.setName(name);
+		System.out.println("Enter the lumosity of the star");
+		int l = sc.nextInt();
+		s1.setLuminosity(l);
+		System.out.println("Enter the temperature of the star");
+		long temp = sc.nextLong();
+		s1.setTemperature(temp);
+		System.out.println("Enter the radius of the star");
+		int radius = sc.nextInt();
+		s1.setRadius(radius);
 		System.out.println(s1.getName());
 		System.out.println(s1.getConstellation());
 		System.out.println(s1.getLuminosity());
