@@ -61,8 +61,8 @@ public class Star {
 		return flux;
 
 	}
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		Star s1 = new Star();
 		s1.setConstellation("Hydra");
 		s1.setName("Sun");
@@ -75,7 +75,7 @@ public class Star {
 		System.out.println(s1.getTemperature());
 		System.out.println(s1.getRadius());
 		System.out.println(s1.calculateFlux());
-		
+
 	}
 
 }
