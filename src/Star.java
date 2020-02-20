@@ -69,11 +69,12 @@ public class Star {
 	// this is a method to calculate the flux of the star by using its radius and
 	// lumosity
 	public double calculateFlux() {
-		flux = luminosity / (4 * radius * radius * Math.PI * Math.PI);
-		return flux;
+		setFlux(luminosity / (4 * radius * radius * Math.PI * Math.PI));
+		return getFlux();
 
 	}
-    // driver function to set the properties of the star class
+
+	// driver function to set the properties of the star class
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Star s1 = new Star();
@@ -99,6 +100,14 @@ public class Star {
 		System.out.println(s1.getRadius());
 		System.out.println(s1.calculateFlux());
 
+	}
+
+	public double getFlux() {
+		return flux;
+	}
+
+	public void setFlux(double flux) {
+		this.flux = flux;
 	}
 
 }

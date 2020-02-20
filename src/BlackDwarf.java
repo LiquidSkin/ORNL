@@ -1,6 +1,8 @@
 import java.util.*;
 
-
+/* This Blackhole class is just to demonstrate the implementation of extending the abstract parent class
+   and implementing all its abstract methods
+*/
 public class BlackDwarf extends DwarfStar {
 
 	@Override
@@ -14,8 +16,8 @@ public class BlackDwarf extends DwarfStar {
 		System.out.println("The Fusion Rate of the WhiteDwarf Star is" + getFusionRate());
 
 	}
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		DwarfStar bd = new BlackDwarf();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the constellation name");
@@ -31,11 +33,11 @@ public class BlackDwarf extends DwarfStar {
 		double fusionRate = sc.nextDouble();
 		bd.setFusionRate(fusionRate);
 		System.out.println("Enter the temperature");
-	    long temperature = sc.nextLong();
-	    bd.setTemperature(temperature);
-	    bd.getDetails();
-	    bd.calculatePressure();
-	    
+		long temperature = sc.nextLong();
+		bd.setTemperature(temperature);
+		bd.getDetails();
+		bd.calculatePressure();
+
 	}
 
 }

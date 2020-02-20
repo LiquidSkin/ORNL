@@ -1,7 +1,12 @@
 import java.util.*;
+
+/* This is a supergiant star which extends the star class demonstrating inheritance in Java. This supergiant 
+    class has an additional property surfaceGravity
+*/
 public class SuperGiant extends Star {
 	private float surfaceGravity;
 
+	// getter and setter methods for this additional property
 	public float getSurfaceGravity() {
 		return surfaceGravity;
 	}
@@ -9,7 +14,9 @@ public class SuperGiant extends Star {
 	public void setSurfaceGravity(float surfaceGravity) {
 		this.surfaceGravity = surfaceGravity;
 	}
+	
 
+	// driver function to set all the basic properties of a supergiant star
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		SuperGiant sg1 = new SuperGiant();
