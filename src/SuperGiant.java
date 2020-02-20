@@ -9,8 +9,8 @@ public class SuperGiant extends Star {
 	public void setSurfaceGravity(float surfaceGravity) {
 		this.surfaceGravity = surfaceGravity;
 	}
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		SuperGiant sg1 = new SuperGiant();
 		sg1.setName("Betelgeuse");
 		sg1.setConstellation("Ursula Major");
