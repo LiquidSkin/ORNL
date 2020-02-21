@@ -35,6 +35,14 @@ class Testcases {
 		BlackHole bt = new BlackHole(name);
 		assertEquals(bt.name, name);
 	}
+	public void BlackHoleTest3() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the name of your blackhole");
+		String name = sc.nextLine();
+		BlackHole bt = new BlackHole(name);
+		assertEquals(bt.name, name);
+	}
+
 
 	@Test
 	/*

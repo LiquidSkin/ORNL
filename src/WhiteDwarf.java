@@ -35,6 +35,9 @@ public class WhiteDwarf extends DwarfStar {
 	@Override
 	public void getDetails() {
 		System.out.println("The Pressure of the WhiteDwarf Star is " + calculatePressure());
+		System.out.println("The Constellation name of the WhiteDwarf Star is" + getConstellation());
+		System.out.println("The radius of the WhiteDwarfStar is" + getRadius());
+		System.out.println("The temperature of the star is " + getTemperature());
 		System.out.println("The Fusion Rate of the WhiteDwarf Star is" + getFusionRate());
 
 	}
@@ -91,8 +94,7 @@ public class WhiteDwarf extends DwarfStar {
 		w1.setName(nm);
 		w1.setRadius(29);
 		w1.getDetails();
-		System.out.println(w1.getConstellation() + " " + w1.getFusionRate() + " " + w1.getLuminosity());
-
+		
 	}
 
 }

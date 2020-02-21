@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="ORNL">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="13"/>
+    <property name="source" value="13"/>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.api_5.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.engine_5.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.params_5.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.commons_1.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.engine_1.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.launcher_1.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.runner_1.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.suite.api_1.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.vintage.engine_5.5.1.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="ORNL.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.BlackDwarf.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.MyMainClass.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.Star.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.SuperGiant.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.WhiteDwarf.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.BlackHoleTest.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.BlackHole.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.Testcases.classpath">
+        <path refid="ORNL.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="ORNL.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="BlackDwarf">
+        <java classname="BlackDwarf" failonerror="true" fork="yes">
+            <classpath refid="run.BlackDwarf.classpath"/>
+        </java>
+    </target>
+    <target name="MyMainClass">
+        <java classname="MyMainClass" failonerror="true" fork="yes">
+            <classpath refid="run.MyMainClass.classpath"/>
+        </java>
+    </target>
+    <target name="Star">
+        <java classname="Star" failonerror="true" fork="yes">
+            <classpath refid="run.Star.classpath"/>
+        </java>
+    </target>
+    <target name="SuperGiant">
+        <java classname="SuperGiant" failonerror="true" fork="yes">
+            <classpath refid="run.SuperGiant.classpath"/>
+        </java>
+    </target>
+    <target name="WhiteDwarf">
+        <java classname="WhiteDwarf" failonerror="true" fork="yes">
+            <classpath refid="run.WhiteDwarf.classpath"/>
+        </java>
+    </target>
+    <target name="BlackHoleTest">
+        <java classname="BlackHoleTest" failonerror="true" fork="yes">
+            <classpath refid="run.BlackHoleTest.classpath"/>
+        </java>
+    </target>
+    <target name="BlackHole">
+        <java classname="BlackHole" failonerror="true" fork="yes">
+            <classpath refid="run.BlackHole.classpath"/>
+        </java>
+    </target>
+    <target name="Testcases">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="Testcases" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Testcases.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

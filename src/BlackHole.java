@@ -42,8 +42,14 @@ public class BlackHole {
 		constellation = "Canis";
 		variableType = "S";
 	}
-	public double calculateSchwarzchildRadius(double mass)
-	{
+
+	/*
+	 * This is a function which calculates the Schwarzchild radius of the blackhole.
+	 * It is not accurate but it demonstrates the use of instance variables and
+	 * accomplishes a useful calculation with all the properties which we have
+	 * defined in our class.
+	 */
+	public double calculateSchwarzchildRadius(double mass) {
 		long speed = 300000000;
 		double universalGravitationalConstant = 0.00000000000667048;
 		double radius = (2 * universalGravitationalConstant * mass) / (speed * speed);
